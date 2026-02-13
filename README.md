@@ -1,2 +1,3 @@
-# romantic-valentine-prompt-page-with-evasive-no-and-meme-reveal_13
-Exported from Caffeine project: Make the meme (post-Yes reveal) page cuter
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

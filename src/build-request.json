@@ -1,0 +1,86 @@
+{
+  "kind": "build_request",
+  "title": "Make the meme (post-Yes reveal) page cuter",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the post-\"Yes\" celebratory reveal section (the state rendered when `answered === true` in `frontend/src/App.tsx`) to look noticeably more cute/soft while keeping the existing meme image, heading, and romantic message content.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "change the meme page make it more cute"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After clicking “Yes! 💕”, the reveal view has a clearly cuter/softer presentation than the current centered layout (e.g., pastel card/container treatment, softer shadows, rounded elements, cute decorative accents), without changing the flow of the app.",
+        "The meme image `/assets/generated/valentine-meme.dim_1200x900.png` is still displayed and remains the primary visual element.",
+        "The heading text “Good choice ❤️” remains exactly the same.",
+        "The romantic message paragraph remains exactly the same text as currently shown in the reveal view."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add cute decorative visuals to the reveal page using new static image assets in `frontend/public/assets/generated` (e.g., kawaii heart/sparkle stickers and/or a subtle repeating background pattern), and render them in the reveal layout without fetching them from the backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "change the meme page make it more cute"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The new decorative assets are present under `frontend/public/assets/generated` and are referenced directly by the frontend via `/assets/generated/...` paths.",
+        "Decorations enhance the reveal view while not obscuring the meme image, heading, or message on common screen sizes (mobile through desktop)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Enhance the reveal page motion to feel softer/cuter (e.g., gentle float/bob or sparkle-like subtle animation on decorative elements) while preserving the existing fade/scale-in feel and avoiding distracting motion.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "change the meme page make it more cute"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Reveal page includes at least one additional subtle, cute animation (beyond the existing fade/scale) that runs smoothly and does not cause layout shift.",
+        "Animations respect usability (no rapid flashing; overall motion remains gentle)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under `frontend/src/components/ui` (read-only UI components must be composed, not modified).",
+    "Do not change backend code; this request is purely a frontend visual/style update.",
+    "Do not change the reveal page user-facing text content (keep “Good choice ❤️” and the existing romantic message exactly as-is)."
+  ],
+  "nonGoals": [
+    "Do not add new screens, routing, or additional app features beyond styling the existing reveal/meme page.",
+    "Do not replace or modify the existing meme image file unless explicitly requested later."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Kawaii heart-and-sparkle sticker cluster with transparent background (cute-stickers-1.dim_512x512.png)",
+      "Soft pastel repeating background pattern with tiny hearts/sparkles (cute-pattern-bg.dim_1600x900.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

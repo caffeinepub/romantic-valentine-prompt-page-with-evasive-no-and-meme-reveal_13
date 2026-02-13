@@ -1,0 +1,5 @@
+{
+  "frontend/src/App.tsx": "Main Valentine's Day page component with evasive \"No\" button that moves on hover/touch and reveals a cute meme page with decorative stickers, pattern background, floating animations, sparkle effects, and a soft pastel card container when \"Yes\" is clicked.",
+  "frontend/src/index.css": "Global styles with romantic pink/white OKLCH color palette, custom animations (fade-in, scale-in, float, twinkle), cute shadow utilities, and Inter font family for a cohesive Valentine's theme.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color tokens (romantic-light, romantic-medium, romantic-accent, romantic-deep) and Inter font family for consistent theming."
+}

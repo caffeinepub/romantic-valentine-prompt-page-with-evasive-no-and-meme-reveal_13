@@ -1,0 +1,74 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Cuter post-Yes reveal styling with decorative assets and gentle motion",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Restyle the post-Yes reveal view into a noticeably cuter/softer presentation while preserving the existing meme image, heading, and romantic message text.",
+      "acceptanceCriteria": [
+        "After clicking “Yes! 💕”, the reveal view has a clearly cuter/softer presentation than the current centered layout (e.g., pastel card/container treatment, softer shadows, rounded elements, cute decorative accents), without changing the flow of the app.",
+        "The meme image `/assets/generated/valentine-meme.dim_1200x900.png` is still displayed and remains the primary visual element.",
+        "The heading text “Good choice ❤️” remains exactly the same.",
+        "The romantic message paragraph remains exactly the same text as currently shown in the reveal view."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update only the `answered === true` reveal layout to use a softer, cuter composition (e.g., pastel card/container, rounded corners, gentle shadows, spacing) while keeping the same meme image source, heading text “Good choice ❤️”, and the exact same romantic message text. Do not add new screens or routing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add small, app-scoped utility classes (via @layer utilities) to support a softer reveal presentation (e.g., subtle glow/shadow helpers and any non-component styling needed), without modifying any files under `frontend/src/components/ui`."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add new static decorative image assets and render them on the reveal page directly from frontend public assets (no backend fetching).",
+      "acceptanceCriteria": [
+        "The new decorative assets are present under `frontend/public/assets/generated` and are referenced directly by the frontend via `/assets/generated/...` paths.",
+        "Decorations enhance the reveal view while not obscuring the meme image, heading, or message on common screen sizes (mobile through desktop)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/cute-stickers-1.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static decorative sticker asset at the exact path `frontend/public/assets/generated/cute-stickers-1.dim_512x512.png` so it can be referenced directly by the frontend without any backend fetching."
+        },
+        {
+          "path": "frontend/public/assets/generated/cute-pattern-bg.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated static repeating background pattern asset at the exact path `frontend/public/assets/generated/cute-pattern-bg.dim_1600x900.png` so it can be referenced directly by the frontend without any backend fetching."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "In the `answered === true` reveal view, render the new decorative images using direct public paths, including `frontend/public/assets/generated/cute-pattern-bg.dim_1600x900.png` as a subtle background treatment and `frontend/public/assets/generated/cute-stickers-1.dim_512x512.png` as non-obscuring decorative accents positioned around the main content (ensure they do not cover the meme image, heading, or paragraph on mobile through desktop)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add at least one additional gentle, cute animation to the reveal page (beyond existing fade/scale) without causing layout shift or distracting motion.",
+      "acceptanceCriteria": [
+        "Reveal page includes at least one additional subtle, cute animation (beyond the existing fade/scale) that runs smoothly and does not cause layout shift.",
+        "Animations respect usability (no rapid flashing; overall motion remains gentle)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add new keyframes + utility animation classes for gentle motion (e.g., slow float/bob for stickers and a subtle twinkle/sparkle effect) ensuring the animations are transform/opacity-based to avoid layout shift and remain non-distracting."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Apply the new gentle animation utilities to reveal-page decorative elements (e.g., sticker cluster and/or small accent elements) while preserving the existing reveal fade-in and meme scale-in feel; ensure animation usage is subtle and does not introduce layout shift."
+        }
+      ]
+    }
+  ]
+}

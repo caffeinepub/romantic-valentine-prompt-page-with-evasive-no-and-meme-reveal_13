@@ -1,0 +1,14 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no backend logic implemented.",
+  "feature_evidence.json": "Feature evidence report listing three UI enhancement features and their affected frontend files.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing key frontend files and their thematic styling for the Valentine's UI.",
+  "frontend/index.css": "Tailwind base theme CSS defining color variables, dark mode tokens, and base element styling.",
+  "frontend/index.html": "Simple HTML shell loading the React app via main.tsx.",
+  "frontend/src/App.tsx": "Main interactive Valentine UI with evasive “No” button and a decorative animated reveal screen when “Yes” is clicked.",
+  "frontend/src/hooks/useActor.ts": "Hook that creates and manages a backend actor based on the user’s Internet Identity state.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity auth provider and hook handling login, identity storage, and status management.",
+  "frontend/src/index.css": "Global Tailwind styling with romantic color palette, animations, and cute shadow utilities.",
+  "frontend/src/main.tsx": "React entry point configuring providers and rendering the App component.",
+  "frontend/tailwind.config.js": "Configures Tailwind with dark mode, content scanning, custom colors, typography, animations, and extended theme settings for a styled UI.",
+  "project_state.json": "Defines the project’s current state, features, and image requirements for updating the reveal page with cuter visuals and animations."
+}
